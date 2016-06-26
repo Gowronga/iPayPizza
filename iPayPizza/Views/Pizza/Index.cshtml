@@ -1,0 +1,32 @@
+﻿@model iPayPizza.Models.Pizza
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Ajax.BeginForm("AddPizza", "Pizza",new AjaxOptions { UpdateTargetId = "addPizza" }))
+{
+    <button id="addPizza" class="btn btn-primary">Add Pizza</button>
+}  
+
+
+@using (Ajax.BeginForm("AddPizza2", "Pizza", new AjaxOptions { UpdateTargetId = "divPizza" }))
+{
+    <div id="divPizza"></div>
+        <ol id="pizzaCollection">
+            <li>
+                @Html.Label("Amount")
+                @Html.TextBox("txtAmount")
+            </li>
+            <li>
+                @Html.Label("Amount")
+                @Html.TextBox("txtAmount")
+            </li>
+            <li>
+                @Html.Label("Amount")
+                @Html.TextBox("txtAmount")
+            </li>
+            
+        </ol>
+        <button>Calculate</button>
+}   
